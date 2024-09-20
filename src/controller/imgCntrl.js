@@ -71,7 +71,7 @@ const imgCntrl = {
     },
     delImg: async (req, res) => {
         try {
-            const { id } = req.params;
+            const { id } = req.params;            
 
             const image = await Img.findById(id);
 
@@ -84,7 +84,7 @@ const imgCntrl = {
                 });
 
                 await Img.findByIdAndDelete(id);
-                return res.status(200).send({ message: "Successfully ochirildi", image });
+                return res.status(200).send({ message: "Deleted!" });
             }
         } catch (error) {
             console.log(error);
